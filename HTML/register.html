@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html">Portfolio<span>.</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a class="is-active" href="register.html">Register</a>
+        <a href="pwc.html">PwC-style demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Registration</h1>
+    <p class="page-sub">Create an account. Fields are validated in the browser before submit.</p>
+
+    <article class="card form-card">
+      <h2>Registration form</h2>
+      <form id="register-form" novalidate>
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="80" pattern="[A-Za-z\s.'-]{2,}" placeholder="Your name" />
+          <p class="hint">Letters, spaces, and . ' - only; at least 2 characters.</p>
+          <p class="field-error" id="name-error" role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@example.com" />
+          <p class="field-error" id="email-error" role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" pattern="[0-9\s\-+]{10,15}" placeholder="10–15 digits" />
+          <p class="hint">If filled, use 10–15 digits (spaces or dashes allowed).</p>
+          <p class="field-error" id="phone-error" role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters" />
+          <p class="hint">Minimum 8 characters, including one letter and one number.</p>
+          <p class="field-error" id="password-error" role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm">Confirm password</label>
+          <input type="password" id="confirm" name="confirm" autocomplete="new-password" required />
+          <p class="field-error" id="confirm-error" role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <span id="gender-label">Gender</span>
+          <div class="radio-row" role="group" aria-labelledby="gender-label">
+            <label><input type="radio" name="gender" value="male" required /> Male</label>
+            <label><input type="radio" name="gender" value="female" /> Female</label>
+            <label><input type="radio" name="gender" value="other" /> Other</label>
+          </div>
+          <p class="field-error" id="gender-error" role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <span id="interests-label">Interests (pick at least one)</span>
+          <div class="check-row" role="group" aria-labelledby="interests-label">
+            <label><input type="checkbox" name="interest" value="reading" /> Reading</label>
+            <label><input type="checkbox" name="interest" value="music" /> Music</label>
+            <label><input type="checkbox" name="interest" value="movies" /> Movies</label>
+          </div>
+          <p class="field-error" id="interest-error" role="alert"></p>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn--primary" type="submit">Register</button>
+        </div>
+
+        <p class="form-success" id="form-success" role="status">Registration passed validation. (Demo: no server — data is not sent.)</p>
+      </form>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About Me</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("register-form");
+      var nameInput = document.getElementById("name");
+      var emailInput = document.getElementById("email");
+      var phoneInput = document.getElementById("phone");
+      var passwordInput = document.getElementById("password");
+      var confirmInput = document.getElementById("confirm");
+      var successEl = document.getElementById("form-success");
+
+      function showFieldError(id, message) {
+        var el = document.getElementById(id);
+        var input = el.previousElementSibling;
+        while (input && input.tagName !== "INPUT") {
+          input = input.previousElementSibling;
+        }
+        el.textContent = message || "";
+        el.classList.toggle("is-visible", !!message);
+        if (input && input.classList) {
+          input.classList.toggle("invalid", !!message);
+        }
+      }
+
+      function clearErrors() {
+        ["name-error", "email-error", "phone-error", "password-error", "confirm-error", "gender-error", "interest-error"].forEach(function (id) {
+          showFieldError(id, "");
+        });
+        successEl.classList.remove("is-visible");
+      }
+
+      function passwordStrongEnough(value) {
+        return value.length >= 8 && /[A-Za-z]/.test(value) && /[0-9]/.test(value);
+      }
+
+      function validate() {
+        clearErrors();
+        var ok = true;
+
+        if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+          showFieldError("name-error", "Please enter your full name (at least 2 characters).");
+          ok = false;
+        } else if (!nameInput.validity.valid) {
+          showFieldError("name-error", "Use only letters, spaces, and . ' - characters.");
+          ok = false;
+        }
+
+        if (!emailInput.value.trim()) {
+          showFieldError("email-error", "Email is required.");
+          ok = false;
+        } else if (!emailInput.validity.valid) {
+          showFieldError("email-error", "Enter a valid email address.");
+          ok = false;
+        }
+
+        if (phoneInput.value.trim()) {
+          var digits = phoneInput.value.replace(/\D/g, "");
+          if (digits.length < 10 || digits.length > 15) {
+            showFieldError("phone-error", "Phone must be 10–15 digits.");
+            ok = false;
+          }
+        }
+
+        if (!passwordInput.value) {
+          showFieldError("password-error", "Password is required.");
+          ok = false;
+        } else if (!passwordStrongEnough(passwordInput.value)) {
+          showFieldError("password-error", "Use at least 8 characters with one letter and one number.");
+          ok = false;
+        }
+
+        if (confirmInput.value !== passwordInput.value) {
+          showFieldError("confirm-error", "Passwords do not match.");
+          ok = false;
+        }
+
+        var genderChecked = form.querySelector('input[name="gender"]:checked');
+        if (!genderChecked) {
+          showFieldError("gender-error", "Please select a gender option.");
+          ok = false;
+        }
+
+        var interests = form.querySelectorAll('input[name="interest"]:checked');
+        if (interests.length === 0) {
+          showFieldError("interest-error", "Select at least one interest.");
+          ok = false;
+        }
+
+        return ok;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (validate()) {
+          successEl.classList.add("is-visible");
+        }
+      });
+
+      ["input", "change"].forEach(function (evt) {
+        form.addEventListener(evt, function () {
+          if (successEl.classList.contains("is-visible")) {
+            successEl.classList.remove("is-visible");
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

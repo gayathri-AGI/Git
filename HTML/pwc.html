@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seize tomorrow’s tech to reinvent your business | PwC-style demo</title>
+  <meta name="description" content="Static layout demo inspired by the PwC global homepage structure and typography — not affiliated with PwC." />
+  <link rel="stylesheet" href="pwc.css" />
+</head>
+<body class="pwc-page">
+  <a class="pwc-skip" href="#main">Skip to content</a>
+
+  <div class="pwc-topbar">
+    <div class="pwc-topbar__inner">
+      <a href="#">Contact us</a>
+      <a href="#">Site map</a>
+    </div>
+  </div>
+
+  <header class="pwc-header">
+    <div class="pwc-header__row">
+      <a class="pwc-logo" href="pwc.html" aria-label="PwC — demo home">
+        <img class="pwc-logo__img" src="pwc-mark.svg" width="26" height="36" alt="" />
+        <span class="pwc-logo__word">PwC</span>
+      </a>
+
+      <nav class="pwc-nav-desktop" aria-label="Primary">
+        <a href="#">Industries</a>
+        <a href="#">Services</a>
+        <a href="#">Issues</a>
+        <a href="#">About us</a>
+        <a href="#">Careers</a>
+      </nav>
+
+      <div class="pwc-header__actions">
+        <a class="pwc-btn-more" href="#">More</a>
+        <button type="button" class="pwc-icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M20 20l-4-4" />
+          </svg>
+        </button>
+        <button type="button" class="pwc-menu-toggle" id="pwc-menu-btn" aria-expanded="false" aria-controls="pwc-mobile-nav" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="pwc-mobile-drawer" id="pwc-mobile-nav" aria-label="Mobile primary">
+      <a href="#">Industries</a>
+      <a href="#">Services</a>
+      <a href="#">Issues</a>
+      <a href="#">About us</a>
+      <a href="#">Careers</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="pwc-hero">
+      <div class="pwc-hero__inner">
+        <div class="pwc-hero__lockup">
+          <a
+            class="pwc-hero__site-link"
+            href="https://www.pwc.com/gx/en.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img class="pwc-hero__lockup-mark" src="pwc-mark.svg" width="32" height="44" alt="" />
+            <span class="pwc-hero__lockup-word">PwC</span>
+          </a>
+          <p class="pwc-hero__lockup-caption">
+            Layout study inspired by the
+            <a href="https://www.pwc.com/gx/en.html" target="_blank" rel="noopener noreferrer">global homepage</a>
+            — not affiliated.
+          </p>
+        </div>
+        <p class="pwc-hero__eyebrow">Featured</p>
+        <h1>Seize tomorrow’s tech to reinvent your business</h1>
+        <p class="pwc-hero__sub">We help you meet tomorrow’s tech demands</p>
+        <p class="pwc-hero__tag"><span class="pwc-hero__so">So you can</span> compete at a speed that rewrites the rules</p>
+        <div class="pwc-hero__cta">
+          <a class="pwc-btn-primary" href="#">Explore our services</a>
+          <a class="pwc-btn-ghost" href="#hero-video">Watch overview</a>
+        </div>
+        <figure class="pwc-hero__media">
+          <div class="pwc-hero__video-wrap">
+            <video
+              id="hero-video"
+              class="pwc-hero__video"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="auto"
+              aria-label="Campaign-style overview video with PwC-style branding (sample footage, not an official PwC asset)"
+            >
+              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+              <p class="pwc-video-fallback">
+                Your browser cannot play this video. Try Chrome or Edge, or download
+                <a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4">the sample MP4</a>.
+              </p>
+            </video>
+            <div class="pwc-hero__video-brand" aria-hidden="true">
+              <img src="pwc-mark.svg" width="22" height="30" alt="" />
+              <span>PwC</span>
+            </div>
+          </div>
+          <figcaption class="pwc-hero__caption">
+            Video autoplays muted (browser policy); use controls to pause or turn on sound. Sample clip — not the real
+            <a href="https://www.pwc.com/gx/en.html" target="_blank" rel="noopener noreferrer">pwc.com</a> campaign file. Offline: use <code>hero.mp4</code> and point the <code>&lt;source&gt;</code> to it.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="pwc-band">
+      <div class="pwc-band__inner">
+        <h2>Tech is rapidly transforming our world</h2>
+        <p class="lead">
+          It’s reshaping how we work, learn, and connect. Static demo page — layout and copy echo the public <a class="pwc-link" href="https://www.pwc.com/gx/en.html">PwC global site</a> for learning purposes only.
+        </p>
+      </div>
+    </section>
+
+    <section class="pwc-band pwc-band--soft">
+      <div class="pwc-band__inner">
+        <h2>Featured thinking</h2>
+        <p class="lead">Sharp takes on AI, reinvention, and growth — styled like insight cards on the corporate homepage.</p>
+        <div class="pwc-grid-2">
+          <article class="pwc-card">
+            <p class="pwc-card__label">Featured thinking</p>
+            <h3>Scale with AI — the reinvention play</h3>
+            <p>AI leaders don’t only chase efficiency; they harness AI to reinvent models, pursue convergence, and unlock new value pools.</p>
+            <a class="pwc-link" href="#">Discover more</a>
+          </article>
+          <article class="pwc-card">
+            <p class="pwc-card__label">Insight</p>
+            <h3>On global CEO agendas — transforming fast enough for tech and AI</h3>
+            <p>Forward thinkers are seizing opportunities to reinvent for growth, accelerating innovation with AI and cloud.</p>
+            <a class="pwc-link" href="#">Learn more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pwc-band">
+      <div class="pwc-band__inner">
+        <h2 class="pwc-section-title">Three ways to unlock new growth</h2>
+        <p class="pwc-section-sub">As technology reshapes the world, new sources of value emerge — is your business ready?</p>
+        <div class="pwc-grid-3">
+          <div class="pwc-pillar">
+            <h3>Shape your future with AI</h3>
+            <p>Turn innovation into impact, moving from experiment to scale.</p>
+          </div>
+          <div class="pwc-pillar">
+            <h3>Seize your opportunity</h3>
+            <p>Unite human potential and AI power to reinvent your business.</p>
+          </div>
+          <div class="pwc-pillar">
+            <h3>Capture new value</h3>
+            <p>Be first to unlock growth as industries converge.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pwc-band pwc-band--soft">
+      <div class="pwc-band__inner">
+        <h2 class="pwc-section-title">Real stories. Real results.</h2>
+        <p class="pwc-section-sub">Case study tiles — structure only, not live PwC content.</p>
+        <div class="pwc-cases">
+          <article class="pwc-case">
+            <h3>Operations transformation</h3>
+            <p>Digital innovation to boost resilience and sustainability while reducing cost.</p>
+            <a class="pwc-link" href="#">Learn more</a>
+          </article>
+          <article class="pwc-case">
+            <h3>Speed and service with AI</h3>
+            <p>Agents and automation to cut review time and scale support globally.</p>
+            <a class="pwc-link" href="#">Learn more</a>
+          </article>
+          <article class="pwc-case">
+            <h3>From bank to software business</h3>
+            <p>Platform offerings that help institutions launch faster with proven technology.</p>
+            <a class="pwc-link" href="#">Learn more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pwc-strip">
+      <h2>Lead into the future with tech</h2>
+      <p>Reinvent and grow with AI, data, and cloud — move faster while building trust and delivering results.</p>
+      <a class="pwc-btn-primary" href="#">Explore our services</a>
+    </section>
+
+    <section class="pwc-prefooter">
+      <div class="pwc-prefooter__grid">
+        <div>
+          <h3>Careers</h3>
+          <p>Whether you’re starting out or are experienced, your future starts here.</p>
+          <a class="pwc-link" href="#">Explore careers</a>
+        </div>
+        <div>
+          <h3>Press room</h3>
+          <p>Leadership, latest news, and regional contacts.</p>
+          <a class="pwc-link" href="#">Visit press room</a>
+        </div>
+        <div>
+          <h3>Offices</h3>
+          <p>Global network — find us wherever you need us.</p>
+          <a class="pwc-link" href="#">Locations worldwide</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pwc-site-footer">
+    <div class="pwc-site-footer__links">
+      <a href="#">Legal notices</a>
+      <a href="#">Privacy</a>
+      <a href="#">Cookie policy</a>
+      <a href="#">Terms and conditions</a>
+    </div>
+    <p class="pwc-site-footer__legal">
+      Unofficial static layout demo for learning — not affiliated with PwC. Structure inspired by public marketing pages. Return to <a class="pwc-footer-home" href="index.html">portfolio home</a>.
+    </p>
+  </footer>
+
+  <p class="pwc-back"><a href="index.html">← Back to my portfolio</a></p>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("pwc-menu-btn");
+      var nav = document.getElementById("pwc-mobile-nav");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    })();
+  </script>
+</body>
+</html>

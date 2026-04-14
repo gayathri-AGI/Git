@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html">Portfolio<span>.</span></a>
+      <nav class="nav" aria-label="Main">
+        <a class="is-active" href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="register.html">Register</a>
+        <a href="pwc.html">PwC-style demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Personal Portfolio Web App</h1>
+      <p class="lead">
+        A simple, responsive showcase: learn more about me, explore my hobbies and skills, or create an account via the registration form.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="about.html">About Me</a>
+        <a class="btn btn--ghost" href="register.html">Registration</a>
+      </div>
+    </section>
+
+    <article class="card">
+      <h2>Welcome</h2>
+      <p>
+        This site is built with semantic HTML, a shared stylesheet, and anchor navigation across the home, about, and register pages. Use the links above or the buttons to move between sections.
+      </p>
+    </article>
+
+    <article class="card project-showcase">
+      <div class="project-showcase__head">
+        <img class="project-showcase__mark" src="pwc-mark.svg" width="28" height="38" alt="" />
+        <div class="project-showcase__intro">
+          <h2>PwC global site — portfolio piece</h2>
+          <p>
+            A layout study modeled on the public
+            <a href="https://www.pwc.com/gx/en.html" target="_blank" rel="noopener noreferrer">PwC global homepage</a>
+            (hero, navigation, featured blocks, and footer). It uses a PwC-style wordmark and a sample video — not official PwC media.
+          </p>
+          <p class="project-showcase__actions">
+            <a class="btn btn--primary" href="pwc.html">Open full demo</a>
+            <a class="btn btn--ghost" href="https://www.pwc.com/gx/en.html" target="_blank" rel="noopener noreferrer">Visit real site</a>
+          </p>
+        </div>
+      </div>
+      <div class="project-showcase__media">
+        <video
+          class="project-showcase__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata"
+          aria-label="Preview of sample video used on the PwC-style demo page"
+        >
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+        </video>
+        <div class="project-showcase__badge" aria-hidden="true">
+          <img src="pwc-mark.svg" width="20" height="28" alt="" />
+          <span>PwC</span>
+        </div>
+      </div>
+      <p class="project-showcase__note">Preview autoplays muted; unmute with the player if your browser allows.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-links"><a href="about.html">About Me</a> · <a href="register.html">Register</a> · <a href="pwc.html">PwC demo</a></p>
+    <p>Personal Portfolio — static HTML &amp; CSS</p>
+  </footer>
+</body>
+</html>
